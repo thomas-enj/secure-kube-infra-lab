@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: reader-cluster-role-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: reader-cluster-role
+subjects:
+- kind: Group
+  name: "77a6e146-c30b-4882-a388-bfb84c0eaeac" # Valeur à renseigner après création du groupe Readers dans Entra ID
+  apiGroup: rbac.authorization.k8s.io
